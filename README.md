@@ -4,4 +4,6 @@ the famous enigma cryto machine
 
 You think it's on a submarine...  
 
+Good luck.
+
 play the game [here](https://twopiharris.github.io/Enigma-Fall-25/) 
