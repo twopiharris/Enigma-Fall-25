@@ -1,0 +1,115 @@
+:: StoryTitle
+Enigma
+
+
+:: StoryData
+{
+  "ifid": "F9916B66-4CC4-48F8-80FA-D735C3569443",
+  "format": "Harlowe",
+  "format-version": "3.3.9",
+  "start": "start",
+  "zoom": 0.3
+}
+
+
+:: aft {"position":"393.5,687.5","size":"100,100"}
+You are in the signal room.  You see the enigma device! it looks like a small typewriter with several wheels on it. This is what you came for!  How will you get it off of the boat?
+[[Signal with the device |signal]]
+[[Shoot your way out |shoot]]
+
+
+:: box {"position":"388.5,357.5","size":"100,100"}
+You crawl inside the box and wait.  Suddenly, you feel the box being picked up and carried across the warf!
+[[wait patiently inside the box->wait]]
+[[jump out of the box and overtake the guards->jump out]]
+
+
+:: doorway {"position":"217.5,208.5","size":"100,100"}
+You walked right into a group of angry-looking guards.  It doesn't look good.
+[[start over->start]]
+
+
+:: forward {"position":"10.5,174.5","size":"100,100"}
+As you move forward into the torpedo room, two sailers grab you.  As soon as they realize you are not a member of the crew, they force you into a torpedo tube.  You hear the door start to open, and water rushes in.  You do not survive the trip to the surface.
+[[Start over->start]]
+
+
+:: jump out {"position":"463.5,507.5","size":"100,100"}
+You decide to jump out of the box, but you are cornered at the end of the warf
+[[jump into the water->water]]
+
+
+:: leave the box {"position":"160.5,680.5","size":"100,100"}
+It is as quiet as it ever gets on the submarine at sea.  Do you 
+[[head forward->forward]]
+[[head aft->aft]]
+
+
+:: shoot {"position":"841.5,224.5","size":"100,100"}
+A gunfight on a submerged submarine is a very poor choice.
+[[Start over->start]]
+
+
+:: signal {"position":"569.5,683.5","size":"100,100"}
+You use the enigma device to send a coded signal.  Allied forces recognize your code and surround the ship as it surfaces. 
+[[Give enigma to allied forces->win]]
+
+
+:: start [start] {"position":"475.5,51.5","size":"100,100"}
+<p class = "centered">
+<img src = "https://3dwarehouse.sketchup.com/warehouse/v1.0/publiccontent/9268f271-18a0-43c8-9e56-0e8fe114b37c" class = "pic2x3">
+</p>
+
+(set: $counter = 0)
+You are standing in a submarine yard, looking for the infamous Enigma code machine
+[[Go to a nearby warehouse->warehouse]]
+[[Go to the deck of the submarine floating nearby->submarine]]
+
+
+
+:: submarine {"position":"634.5,210.5","size":"100,100"}
+As you step ontothe submarine's deck, a guard approaches you.
+Your only choice is to jump off the sub.  Which direction?
+[[Foreward->water]]
+[[Aft->water]]
+[[Starboard->water]]
+[[Port->water]]
+
+
+:: wait {"position":"293.5,504.5","size":"100,100"}
+You wait in the box.
+(set: $counter to $counter + 1)
+You have waited for $counter hours
+(if: $counter is 5)[
+It is quiet now. You can [[leave the box]]
+](else:)[
+A submarine pen is a busy place. You decide to [[wait]] some more
+]
+
+
+:: warehouse {"position":"399.5,191.5","size":"100,100"}
+You sneak inside the warehouse.  You see a door to the south, and a large box in the middle of the floor.
+[[go through the doorway->doorway]]
+[[get into the box->box]]
+
+
+:: water {"position":"506.5,356.5","size":"100,100"}
+You are in the water.  The submarine slowly moves away. You could hang on to the outside, but it will submerge.  It doesn't look good.
+[[Start over->start]]
+
+
+:: win {"position":"833.5,389.5","size":"100,100"}
+You give the enigma device to the gathered sailers, who do not understand the device, but they send it back to headquarters.  Eventually, Alan Turing and his team at Bletchly Park use the machine to help build the world's first computer to break the enigma code.  You have helped to shorten the war!
+[[Start over->start]]
+
+
+:: StoryStylesheet [stylesheet]
+.centered{
+  text-align: center;
+  color: pink;
+}
+
+.pic2x3{
+  height: 200px;
+  width: 300px;
+}
